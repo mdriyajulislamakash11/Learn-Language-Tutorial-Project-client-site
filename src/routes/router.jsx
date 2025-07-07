@@ -7,6 +7,8 @@ import FindTutors from '../pages/FindTutors';
 import AddTutorials from '../pages/AddTutorials';
 import MyBookedTutors from '../pages/MyBookedTutors';
 import MyTutorials from '../pages/MyTutorials';
+import Login from '../pages/Login';
+import Register from '../pages/Register';
 
 const router = createBrowserRouter([
     {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
             {
                 path: "/my-tutorials",
                 element: <MyTutorials />
+            },
+            {
+                path: "/login",
+                element: <Login />
+            },
+            {
+                path: "/register",
+                element: <Register />
             },
 
         ]
