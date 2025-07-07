@@ -1,10 +1,12 @@
-import React, { useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import { signInWithEmailAndPassword, } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
+import { AuthContext } from '../Auth/AuthProvaide';
 
 
 const Login = () => {
   const [error, setError] = useState("");
+  const {logInUser} = useContext(AuthContext)
   const navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -13,7 +15,7 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    signInWithEmailAndPassword( email, password)
+    logInUser( email, password)
       .then(result => {
         console.log(result.user);
         setError("");
