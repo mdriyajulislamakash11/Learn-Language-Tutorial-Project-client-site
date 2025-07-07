@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { createUserWithEmailAndPassword } from 'firebase/auth';
-import { useNavigate } from 'react-router-dom';
-
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvaide";
 
 const Register = () => {
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { registerUser } = useContext(AuthContext);
 
   const handleRegister = (e) => {
     e.preventDefault();
@@ -21,14 +21,14 @@ const Register = () => {
       return;
     }
 
-    createUserWithEmailAndPassword(auth, email, password)
-      .then(result => {
+    registerUser(email, password)
+      .then((result) => {
         console.log("Registered user:", result.user);
         setError("");
         form.reset();
-        navigate('/');
+        navigate("/");
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err.message);
         setError("Failed to register. Email may already be used.");
       });
