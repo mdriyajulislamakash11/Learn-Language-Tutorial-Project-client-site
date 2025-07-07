@@ -83,6 +83,13 @@ const Register = () => {
             Register
           </button>
         </form>
+
+        <p className="text-sm text-center mt-4">
+          Already have an account?
+          <a href="/login" className="text-blue-500 hover:underline ml-1">
+            Login here
+          </a>
+        </p>
       </div>
     </div>
   );
