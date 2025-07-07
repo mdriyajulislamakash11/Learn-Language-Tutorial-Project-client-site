@@ -4,9 +4,56 @@ import { NavLink } from "react-router-dom";
 const Navbar = () => {
   const links = (
     <>
-      <NavLink to='/'>
-        <li>Home</li>
-      </NavLink>
+      <li>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-bold underline" : "text-gray-700"
+          }
+        >
+          Home
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/find-tutors"
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-bold underline" : "text-gray-700"
+          }
+        >
+          Find Tutors
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/add-tutorials"
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-bold underline" : "text-gray-700"
+          }
+        >
+          Add Tutorials
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/my-tutorials"
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-bold underline" : "text-gray-700"
+          }
+        >
+          My Tutorials
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to="/my-booked-tutorials"
+          className={({ isActive }) =>
+            isActive ? "text-blue-500 font-bold underline" : "text-gray-700"
+          }
+        >
+          My Booked Tutors
+        </NavLink>
+      </li>
     </>
   );
 
