@@ -78,13 +78,22 @@ const AddTutorials = () => {
         {/* Language */}
         <div>
           <label className="block mb-1 font-semibold">Language</label>
-          <input
-            type="text"
+          <select
             name="language"
-            placeholder="Enter language name"
             required
             className="w-full px-4 py-2 border rounded-lg"
-          />
+          >
+            <option value="">Select a language</option>
+            <option value="English">English Tutors</option>
+            <option value="Spanish">Spanish Tutors</option>
+            <option value="French">French Tutors</option>
+            <option value="German">German Tutors</option>
+            <option value="Italian">Italian Tutors</option>
+            <option value="Chinese">Chinese Tutors</option>
+            <option value="Arabic">Arabic Tutors</option>
+            <option value="Japanese">Japanese Tutors</option>
+            <option value="Portuguese">Portuguese Tutors</option>
+          </select>
         </div>
 
         {/* Price */}
