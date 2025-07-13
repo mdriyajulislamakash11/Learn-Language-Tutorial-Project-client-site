@@ -15,7 +15,7 @@ const AddTutorials = () => {
     const language = form.language.value;
     const price = form.price.value;
     const description = form.description.value;
-    const review = 0;
+    const review = form.review.value;
 
     const tutorial = {
       name,

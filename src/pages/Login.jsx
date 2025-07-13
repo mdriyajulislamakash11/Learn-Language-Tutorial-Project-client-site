@@ -1,12 +1,19 @@
-import { useContext, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../Auth/AuthProvaide';
-
+import { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AuthContext } from "../Auth/AuthProvaide";
 
 const Login = () => {
   const [error, setError] = useState("");
-  const {logInUser} = useContext(AuthContext)
+  const { logInUser, googleLogin } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const handleGoogle = () => {
+    googleLogin().then((result) => {
+      console.log(result.user);
+      alert("Google Login Successful!");
+      navigate("/");
+    });
+  };
 
   const handleLogin = (e) => {
     e.preventDefault();
@@ -14,13 +21,13 @@ const Login = () => {
     const email = form.email.value;
     const password = form.password.value;
 
-    logInUser( email, password)
-      .then(result => {
+    logInUser(email, password)
+      .then((result) => {
         console.log(result.user);
         setError("");
         navigate("/"); // redirect after login
       })
-      .catch(err => {
+      .catch((err) => {
         console.error(err.message);
         setError("Invalid email or password");
       });
@@ -58,10 +65,20 @@ const Login = () => {
           </button>
         </form>
 
-          <p className="text-sm text-center mt-4">
+        <p className="text-sm text-center mt-4">
           Don't have an account?
-          <a href="/register" className="text-blue-500 hover:underline ml-1">Register here</a>
+          <a href="/register" className="text-blue-500 hover:underline ml-1">
+            Register here
+          </a>
         </p>
+
+        {/* goggle login */}
+        <p className="divider"> OR </p>
+        <div>
+          <button className="btn" onClick={handleGoogle}>
+            Google
+          </button>
+        </div>
       </div>
     </div>
   );
