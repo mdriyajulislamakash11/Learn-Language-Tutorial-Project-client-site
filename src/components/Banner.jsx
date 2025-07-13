@@ -40,7 +40,7 @@ const Bannar = () => {
   ];
 
   return (
-    <div className="max-w-full mx-auto mt-5 rounded overflow-hidden shadow-lg">
+    <div className="max-w-full mx-auto rounded overflow-hidden shadow-lg">
       <Swiper
         modules={[Navigation, Pagination, Autoplay]}
         spaceBetween={30}
