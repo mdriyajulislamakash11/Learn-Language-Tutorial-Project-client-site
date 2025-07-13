@@ -11,7 +11,7 @@ const MainLayoutes = () => {
 
 
         {/* dynamic Layoute */}
-        <div>
+        <div className=''>
             <Outlet />
         </div>
 
