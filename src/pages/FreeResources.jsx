@@ -5,7 +5,8 @@ const resources = [
   {
     title: "100 Common English Verbs (PDF)",
     url: "/downloads/english-verbs.pdf",
-    description: "Essential verbs list to boost your English speaking and writing skills.",
+    description:
+      "Essential verbs list to boost your English speaking and writing skills.",
     pages: 25,
     level: "Beginner",
     size: "1.2MB",
@@ -13,7 +14,8 @@ const resources = [
   {
     title: "Spanish Numbers Chart",
     url: "/downloads/spanish-numbers.pdf",
-    description: "Learn to count and master Spanish numbers easily with this handy chart.",
+    description:
+      "Learn to count and master Spanish numbers easily with this handy chart.",
     pages: 5,
     level: "Beginner",
     size: "0.4MB",
@@ -21,7 +23,8 @@ const resources = [
   {
     title: "Beginner Grammar Cheatsheet",
     url: "/downloads/grammar-cheatsheet.pdf",
-    description: "Quick reference guide for basic English grammar rules and tips.",
+    description:
+      "Quick reference guide for basic English grammar rules and tips.",
     pages: 12,
     level: "Beginner",
     size: "0.9MB",
@@ -29,7 +32,8 @@ const resources = [
   {
     title: "Top 50 Phrasal Verbs (PDF)",
     url: "/downloads/phrasal-verbs.pdf",
-    description: "Common phrasal verbs you need to know for fluent English conversations.",
+    description:
+      "Common phrasal verbs you need to know for fluent English conversations.",
     pages: 15,
     level: "Intermediate",
     size: "1.1MB",
@@ -37,7 +41,8 @@ const resources = [
   {
     title: "English Idioms & Expressions",
     url: "/downloads/english-idioms.pdf",
-    description: "Familiarize yourself with popular English idioms and their meanings.",
+    description:
+      "Familiarize yourself with popular English idioms and their meanings.",
     pages: 20,
     level: "Intermediate",
     size: "1.3MB",
@@ -45,7 +50,8 @@ const resources = [
   {
     title: "Common English Pronunciation Guide",
     url: "/downloads/pronunciation-guide.pdf",
-    description: "Improve your English pronunciation with this easy-to-follow guide.",
+    description:
+      "Improve your English pronunciation with this easy-to-follow guide.",
     pages: 18,
     level: "All Levels",
     size: "1.0MB",
@@ -58,6 +64,15 @@ const FreeResources = () => {
       <h2 className="text-3xl font-bold text-center mb-12">
         🎁 Free Language Learning Resources
       </h2>
+
+      {/* description */}
+      <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+        Grab your free downloadable resources to make language learning easier
+        and more fun! From beginner grammar cheatsheets to pronunciation guides
+        and phrasal verb lists — these handy PDFs are designed to support your
+        learning journey anytime, anywhere.
+      </p>
+
       <div className="grid md:grid-cols-3 gap-8">
         {resources.map((res, index) => (
           <motion.div

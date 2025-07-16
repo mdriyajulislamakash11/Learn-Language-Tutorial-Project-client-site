@@ -4,6 +4,7 @@ import StateSection from '../components/StateSection';
 import FreeResources from './FreeResources';
 import LearningTips from './LearningTips';
 import PricingPlans from './PricingPlans';
+import MegaFunLearningSection from './MegaFunLearningSection';
 
 const Home = () => {
     return (
@@ -19,6 +20,8 @@ const Home = () => {
                 <LearningTips />
 
                 <FreeResources /> 
+
+                <MegaFunLearningSection />
 
                 <PricingPlans />
 

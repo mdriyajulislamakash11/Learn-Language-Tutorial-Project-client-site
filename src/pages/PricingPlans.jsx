@@ -4,33 +4,21 @@ const plans = [
   {
     title: "🎓 Basic",
     price: "৳0",
-    features: [
-      "Access free tutorials",
-      "Limited support",
-      "No certificate",
-    ],
+    features: ["Access free tutorials", "Limited support", "No certificate"],
     button: "Start Free",
     bg: "bg-white text-black",
   },
   {
     title: "⭐ Pro",
     price: "৳499",
-    features: [
-      "1:1 Tutor Access",
-      "Live Classes",
-      "All Free Features",
-    ],
+    features: ["1:1 Tutor Access", "Live Classes", "All Free Features"],
     button: "Go Pro",
     bg: "bg-blue-600 text-white",
   },
   {
     title: "👑 Premium",
     price: "৳999",
-    features: [
-      "All Features + Certificate",
-      "VIP Support",
-      "Unlimited Access",
-    ],
+    features: ["All Features + Certificate", "VIP Support", "Unlimited Access"],
     button: "Join Premium",
     bg: "bg-gradient-to-r from-yellow-400 to-orange-500 text-white",
   },
@@ -40,6 +28,14 @@ const PricingPlans = () => {
   return (
     <section className="w-11/12 mx-auto py-16 text-center">
       <h2 className="text-3xl font-bold mb-10">Choose Your Plan</h2>
+
+      {/* description */}
+      {/* description */}
+      <p className="text-gray-600 text-lg max-w-2xl mx-auto mb-12">
+        Whether you're just starting out or looking for premium features, we’ve
+        got a plan for you. Explore our flexible pricing options and choose the
+        one that fits your learning style best!
+      </p>
 
       <div className="grid md:grid-cols-3 gap-8">
         {plans.map((plan, index) => (

@@ -1,12 +1,5 @@
 import { motion } from "framer-motion";
-import {
-  BookOpen,
-  Brain,
-  Youtube,
-  Mic,
-  Calendar,
-  Globe,
-} from "lucide-react";
+import { BookOpen, Brain, Youtube, Mic, Calendar, Globe } from "lucide-react";
 
 // Icon Mapping
 const iconMap = {
@@ -66,6 +59,14 @@ const LearningTips = () => {
         💡 Learning Tips & Blog
       </h2>
 
+      {/* description  */}
+      <p className="text-center text-gray-600 text-lg max-w-3xl mx-auto mb-12">
+        Discover bite-sized tips and practical resources to supercharge your
+        language learning journey! Whether you're just starting out or polishing
+        your fluency, these tips and blogs will help you stay motivated,
+        organized, and consistent every step of the way.
+      </p>
+
       <div className="grid md:grid-cols-3 gap-8">
         {tips.map((tip, index) => (
           <motion.div
@@ -75,9 +76,7 @@ const LearningTips = () => {
             transition={{ delay: index * 0.2 }}
             className="bg-white shadow-xl p-6 rounded-xl hover:shadow-2xl hover:scale-105 transition-all duration-300"
           >
-            <div className="text-blue-600 mb-3">
-              {iconMap[tip.icon]}
-            </div>
+            <div className="text-blue-600 mb-3">{iconMap[tip.icon]}</div>
             <h3 className="text-xl font-semibold mb-2">{tip.title}</h3>
             <p className="text-sm text-gray-600">{tip.desc}</p>
           </motion.div>
