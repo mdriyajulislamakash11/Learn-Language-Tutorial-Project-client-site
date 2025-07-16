@@ -11,7 +11,7 @@ const MainLayoutes = () => {
 
 
         {/* dynamic Layoute */}
-        <div className=''>
+        <div className='min-h-[calc(100vh-220px)]'>
             <Outlet />
         </div>
 
