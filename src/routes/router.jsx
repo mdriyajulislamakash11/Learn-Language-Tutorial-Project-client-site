@@ -32,15 +32,21 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-tutorials",
-        element: <AddTutorials />,
+        element: <PrivateRoute>
+            <AddTutorials />,
+        </PrivateRoute>
       },
       {
         path: "/my-booked-tutorials",
-        element: <MyBookedTutors />,
+        element: <PrivateRoute>
+            <MyBookedTutors />,
+        </PrivateRoute>
       },
       {
         path: "/my-tutorials",
-        element: <MyTutorials />,
+        element: <PrivateRoute>
+            <MyTutorials />,
+        </PrivateRoute>
       },
       {
         path: "/login",
