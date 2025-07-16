@@ -11,6 +11,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
 import TutorDetails from "../pages/TutorDetails";
+import Update from "../pages/Update";
 
 const router = createBrowserRouter([
   {
@@ -32,21 +33,27 @@ const router = createBrowserRouter([
       },
       {
         path: "/add-tutorials",
-        element: <PrivateRoute>
+        element: (
+          <PrivateRoute>
             <AddTutorials />,
-        </PrivateRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-booked-tutorials",
-        element: <PrivateRoute>
+        element: (
+          <PrivateRoute>
             <MyBookedTutors />,
-        </PrivateRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/my-tutorials",
-        element: <PrivateRoute>
+        element: (
+          <PrivateRoute>
             <MyTutorials />,
-        </PrivateRoute>
+          </PrivateRoute>
+        ),
       },
       {
         path: "/login",
@@ -57,13 +64,22 @@ const router = createBrowserRouter([
         element: <Register />,
       },
       {
+        path: "/update/:id",
+        element: (
+          <PrivateRoute>
+            <Update />,
+          </PrivateRoute>
+        ),
+      },
+      {
         path: "/tutor/:details",
         element: (
           <PrivateRoute>
             <TutorDetails />
           </PrivateRoute>
         ),
-        loader: ({params}) => fetch(`http://localhost:5000/tutorial/${params?.details}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/tutorial/${params?.details}`),
       },
     ],
   },
