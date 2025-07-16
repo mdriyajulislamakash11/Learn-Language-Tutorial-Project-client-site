@@ -10,15 +10,21 @@ const FindTutors = () => {
   useEffect(() => {
     axios.get("http://localhost:5000/tutorials")
       .then((res) => {
-        const filtered = res.data.filter(
+      if(category){  // ar category thakle data pabo category ways 
+          const filtered = res.data.filter(
           (tutor) => tutor.language.toLowerCase() === category.toLowerCase()
         );
         setTutors(filtered);
+      }else{
+        setTutors(res.data)   // jodi category na thake sob data pabo 
+      }
       })
       .catch((error) => {
         console.error("Error fetching tutors:", error);
       });
   }, [category]);
+
+
 
   return (
     <div className="p-6">
