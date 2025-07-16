@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { BsBank2 } from "react-icons/bs";
 import { FaUniversity } from "react-icons/fa";
 import { FaGoogleScholar, FaTowerObservation } from "react-icons/fa6";
@@ -7,9 +7,28 @@ import { IoIosArrowForward } from "react-icons/io";
 import { LuSchool, LuUniversity } from "react-icons/lu";
 import { PiCraneTowerBold } from "react-icons/pi";
 import { RiSchoolFill } from "react-icons/ri";
+import { useEffect, useState } from "react";
+import axios from "axios";
 
 const CategorySections = () => {
   const navigate = useNavigate();
+  const {category} = useParams()
+  const [allTutorials, setAllTutorials] = useState([]);
+  const [filteredTutorials, setFilteredTutorials] = useState([]);
+
+  useEffect(() => {
+    axios.get(`http://localhost:5000/tutorials/${category}`).then((res) => {
+      setAllTutorials(res.data);
+      console.log(res.data)
+    });
+  }, []);
+
+  const filterByLanguage = (language) => {
+    const filtered = allTutorials.filter(
+      (tutorial) => tutorial.language === language
+    );
+    setFilteredTutorials(filtered);
+  };
 
   return (
     <div className="mt-10">
@@ -35,7 +54,12 @@ const CategorySections = () => {
             <FaGoogleScholar />
           </div>
           <div>
-            <h2 className="text-2xl font-bold ">English Tutors</h2>
+            <h2
+              className="text-2xl font-bold "
+             
+            >
+              English Tutors
+            </h2>
             <p className="">sit amet consectetur.</p>
           </div>
           <div className="p-6">
@@ -46,13 +70,14 @@ const CategorySections = () => {
         {/* card 2 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/Spanish")}
+            onClick={() => navigate("/find-tutors/Spanish Tutors")}
         >
           <div className="p-4 text-2xl">
             <RiSchoolFill />
           </div>
           <div>
-            <h2 className="text-2xl font-bold">Spanish Tutors</h2>
+            <h2 className="text-2xl font-bold"
+            >Spanish Tutors</h2>
             <p className="">sit amet consectetur.</p>
           </div>
           <div className="p-6">
@@ -63,7 +88,7 @@ const CategorySections = () => {
         {/* card 3 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/French")}
+          onClick={() => navigate("/find-tutors/French Tutors")}
         >
           <div className="p-4 text-2xl">
             <LuSchool />
@@ -80,7 +105,7 @@ const CategorySections = () => {
         {/* card 4 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/German")}
+          onClick={() => navigate("/find-tutors/German Tutors")}
         >
           <div className="p-4 text-2xl">
             <FaUniversity />
@@ -97,7 +122,7 @@ const CategorySections = () => {
         {/* card 5 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/Italian")}
+          onClick={() => navigate("/find-tutors/Italian Tutors")}
         >
           <div className="p-4 text-2xl">
             <LuUniversity />
@@ -114,7 +139,7 @@ const CategorySections = () => {
         {/* card 6 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/Chinese")}
+          onClick={() => navigate("/find-tutors/Chinese Tutors")}
         >
           <div className="p-4 text-2xl">
             <GiStoneTower />
@@ -131,7 +156,7 @@ const CategorySections = () => {
         {/* card 7 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/Arabic")}
+          onClick={() => navigate("/find-tutors/Arabic Tutors")}
         >
           <div className="p-4 text-2xl">
             <PiCraneTowerBold />
@@ -148,7 +173,7 @@ const CategorySections = () => {
         {/* card 8 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/Japanese")}
+          onClick={() => navigate("/find-tutors/Japanese Tutors")}
         >
           <div className="p-4 text-2xl">
             <BsBank2 />
@@ -165,7 +190,7 @@ const CategorySections = () => {
         {/* card 9 */}
         <div
           className="flex justify-between items-center border-2 cursor-pointer hover:bg-gray-100"
-          onClick={() => navigate("/find-tutors/Portuguese")}
+          onClick={() => navigate("/find-tutors/Portuguese Tutors")}
         >
           <div className="p-4 text-2xl">
             <FaTowerObservation />

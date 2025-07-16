@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { AuthContext } from "../Auth/AuthProvaide";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const AddTutorials = () => {
   const { user } = useContext(AuthContext);
+  const navigate = useNavigate();
 
   const handleAddTutorial = (e) => {
     e.preventDefault();
@@ -31,6 +34,15 @@ const AddTutorials = () => {
     // post mathods:
     axios.post(`http://localhost:5000/add-tutorials`, tutorial).then((res) => {
       console.log(res.data);
+
+      Swal.fire({
+        icon: "success",
+        title: "Tutorial Added!",
+        text: "Your tutorial has been successfully posted.",
+        confirmButtonColor: "#2563eb",
+      });
+
+      navigate("/");
     });
   };
 
@@ -84,15 +96,15 @@ const AddTutorials = () => {
             className="w-full px-4 py-2 border rounded-lg"
           >
             <option value="">Select a language</option>
-            <option value="English">English Tutors</option>
-            <option value="Spanish">Spanish Tutors</option>
-            <option value="French">French Tutors</option>
-            <option value="German">German Tutors</option>
-            <option value="Italian">Italian Tutors</option>
-            <option value="Chinese">Chinese Tutors</option>
-            <option value="Arabic">Arabic Tutors</option>
-            <option value="Japanese">Japanese Tutors</option>
-            <option value="Portuguese">Portuguese Tutors</option>
+            <option value="English Tutors">English Tutors</option>
+            <option value="Spanish Tutors">Spanish Tutors</option>
+            <option value="French Tutors">French Tutors</option>
+            <option value="German Tutors">German Tutors</option>
+            <option value="Italian Tutors">Italian Tutors</option>
+            <option value="Chinese Tutors">Chinese Tutors</option>
+            <option value="Arabic Tutors">Arabic Tutors</option>
+            <option value="Japanese Tutors">Japanese Tutors</option>
+            <option value="Portuguese Tutors">Portuguese Tutors</option>
           </select>
         </div>
 
