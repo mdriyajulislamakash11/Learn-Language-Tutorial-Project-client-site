@@ -16,8 +16,11 @@ const TutorCard = ({ tutor }) => {
     speaks,
     rating,
     price,
+    review,
     description,
   } = tutor || {};
+
+  console.log(tutor)
 
   return (
     <div className="flex flex-col md:flex-row items-start gap-4 border p-4 rounded-lg shadow-sm hover:shadow-md transition bg-white">
@@ -52,7 +55,7 @@ const TutorCard = ({ tutor }) => {
         <div className="flex items-center text-sm text-gray-700">
           <FaStar className="text-yellow-400 mr-1" />
           <span className="font-semibold">{rating}</span>
-          <span className="ml-1 text-gray-500 text-xs">76 reviews</span>
+          <span className="ml-1 text-gray-500 text-xs">{review}</span>
         </div>
 
         <div className="text-right">

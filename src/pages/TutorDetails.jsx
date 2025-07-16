@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvaide";
 import axios from "axios";
 import Swal from "sweetalert2";
@@ -10,12 +10,12 @@ const TutorDetails = () => {
 
   const { _id, name, image, language, email, price, review, description } =
     tutor || {};
-  
 
   // book button er kaj
   const handleBookNow = () => {
     const BookingNow = {
       tutorId: _id,
+      name,
       image,
       language,
       price,
@@ -26,7 +26,7 @@ const TutorDetails = () => {
     axios
       .post(`http://localhost:5000/add-booking`, BookingNow)
       .then((res) => {
-        console.log(res.data)
+        console.log(res.data);
         if (res.data.insertedId) {
           Swal.fire({
             title: "Booked!",
@@ -80,12 +80,14 @@ const TutorDetails = () => {
 
       {/* Book Button (only UI) */}
       <div className="mt-6">
-        <button
-          onClick={handleBookNow}
-          className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full text-lg font-semibold transition"
-        >
-          Book
-        </button>
+        <Link to='/my-booked-tutorials'>
+          <button
+            onClick={handleBookNow}
+            className="bg-pink-600 hover:bg-pink-700 text-white px-6 py-2 rounded-full text-lg font-semibold transition"
+          >
+            Book Now
+          </button>
+        </Link>
       </div>
     </div>
   );
