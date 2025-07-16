@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import { AuthContext } from "../Auth/AuthProvaide";
+import Swal from "sweetalert2";
 
 const MyTutorials = () => {
   const { user } = useContext(AuthContext);
@@ -15,10 +16,32 @@ const MyTutorials = () => {
     }
   }, [user]);
 
-
-  // 
-
-
+  // deleted data
+const handleDelete = (id) => {
+  Swal.fire({
+    title: 'Are you sure?',
+    text: "You won't be able to revert this!",
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#3085d6',
+    cancelButtonColor: '#d33',
+    confirmButtonText: 'Yes, delete it!'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      axios.delete(`http://localhost:5000/tutorial/${id}`).then((res) => {
+        if (res.data.deletedCount) {
+          const remaining = tutorials.filter((tutorial) => tutorial._id !== id);
+          setTutorials(remaining);
+          Swal.fire(
+            'Deleted!',
+            'Your tutorial has been deleted.',
+            'success'
+          );
+        }
+      });
+    }
+  });
+};
 
   return (
     <div className="w-11/12 mx-auto">
