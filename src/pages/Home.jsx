@@ -1,6 +1,7 @@
 import Banner from '../components/Banner';
 import CategorySections from '../components/CategorySections';
 import StateSection from '../components/StateSection';
+import PricingPlans from './PricingPlans';
 
 const Home = () => {
     return (
@@ -12,6 +13,10 @@ const Home = () => {
                 <StateSection />
 
                 <CategorySections />
+
+                <PricingPlans />
+
+                
             </div>
         </div>
     );

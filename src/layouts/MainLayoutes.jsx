@@ -1,4 +1,3 @@
-import React from 'react'
 import Navbar from '../components/Navbar'
 import Footer from '../components/Footer'
 import { Outlet } from 'react-router-dom'
@@ -11,7 +10,7 @@ const MainLayoutes = () => {
 
 
         {/* dynamic Layoute */}
-        <div className='min-h-[calc(100vh-220px)]'>
+        <div className='min-h-[calc(100vh-450px)]'>
             <Outlet />
         </div>
 
