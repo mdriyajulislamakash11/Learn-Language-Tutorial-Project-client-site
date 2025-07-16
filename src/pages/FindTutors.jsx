@@ -30,7 +30,7 @@ const FindTutors = () => {
     <div className="p-6">
       <h2 className="text-3xl font-bold mb-4 capitalize">{category} Tutors</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-        {tutors.map((tutor) => <Card tutor={tutor} /> )}
+        {tutors.map((tutor) => <Card key={tutor._id} tutor={tutor} /> )}
       </div>
     </div>
   );

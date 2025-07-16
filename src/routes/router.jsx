@@ -10,7 +10,7 @@ import MyTutorials from "../pages/MyTutorials";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import PrivateRoute from "./PrivateRoute";
-import Details from "../pages/Details";
+import TutorDetails from "../pages/TutorDetails";
 
 const router = createBrowserRouter([
   {
@@ -54,7 +54,7 @@ const router = createBrowserRouter([
         path: "/tutor/:details",
         element: (
           <PrivateRoute>
-            <Details />
+            <TutorDetails />
           </PrivateRoute>
         ),
       },
