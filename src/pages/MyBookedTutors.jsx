@@ -10,7 +10,9 @@ const MyBookedTutors = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/bookings?email=${user?.email}`) // http://localhost:5000/bookings?email=rjakashchowdury@gmail.com
+      .get(`http://localhost:5000/bookings?email=${user?.email}`, {
+        withCredentials: true,
+      }) // http://localhost:5000/bookings?email=rjakashchowdury@gmail.com
       .then((res) => setBookings(res.data))
       .catch((err) => console.error(err));
   }, [user?.email]);
