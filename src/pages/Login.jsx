@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvaide";
+import axios from "axios";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -26,6 +27,16 @@ const Login = () => {
         console.log(result.user);
         setError("");
         navigate("/"); // redirect after login
+
+        // JWT token:
+        const user = { email: email };
+        axios
+          .post(`http://localhost:5000/jwt`, user, {
+            withCredentials: true,
+          })
+          .then((res) => {
+            console.log(res.data);
+          });
       })
       .catch((err) => {
         console.error(err.message);
