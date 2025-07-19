@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../Auth/AuthProvaide";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 const Login = () => {
   const [error, setError] = useState("");
@@ -11,7 +12,15 @@ const Login = () => {
   const handleGoogle = () => {
     googleLogin().then((result) => {
       console.log(result.user);
-      alert("Google Login Successful!");
+
+      Swal.fire({
+        title: "Welcome!",
+        html: `<b>${result.user.displayName}</b>, you're logged in with Google!`,
+        icon: "success",
+        confirmButtonColor: "#3085d6",
+        confirmButtonText: "Go to Home",
+      });
+
       navigate("/");
     });
   };
