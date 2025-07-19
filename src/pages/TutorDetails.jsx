@@ -24,7 +24,7 @@ const TutorDetails = () => {
     };
 
     axios
-      .post(`http://localhost:5000/add-booking`, BookingNow)
+      .post(`https://server-mu-ten-68.vercel.app/add-booking`, BookingNow)
       .then((res) => {
         console.log(res.data);
         if (res.data.insertedId) {

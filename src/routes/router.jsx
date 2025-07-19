@@ -79,7 +79,7 @@ const router = createBrowserRouter([
           </PrivateRoute>
         ),
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/tutorial/${params?.details}`),
+          fetch(`https://server-mu-ten-68.vercel.app/tutorial/${params?.details}`),
       },
     ],
   },

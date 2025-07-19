@@ -11,7 +11,7 @@ const FindTutors = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5000/tutorials")
+      .get("https://server-mu-ten-68.vercel.app/tutorials")
       .then((res) => {
         let data = res.data;
         if (category) {

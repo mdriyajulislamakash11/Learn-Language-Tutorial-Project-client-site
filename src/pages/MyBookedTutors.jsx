@@ -11,14 +11,14 @@ const MyBookedTutors = () => {
 
   useEffect(() => {
     axiosSecure
-      .get(`http://localhost:5000/bookings?email=${user?.email}`) // http://localhost:5000/bookings?email=rjakashchowdury@gmail.com
+      .get(`https://server-mu-ten-68.vercel.app/bookings?email=${user?.email}`) // https://server-mu-ten-68.vercel.app/bookings?email=rjakashchowdury@gmail.com
       .then((res) => setBookings(res.data))
       .catch((err) => console.error(err));
   }, [user?.email]);
 
   const handleReview = (tutorId) => {
     axios
-      .patch(`http://localhost:5000/tutorials/review/${tutorId}`)
+      .patch(`https://server-mu-ten-68.vercel.app/tutorials/review/${tutorId}`)
       .then((res) => {
         console.log(res.data);
         if (res.data.modifiedCount > 0) {
@@ -26,7 +26,7 @@ const MyBookedTutors = () => {
 
           // নতুন করে bookings রিফ্রেশ করা (optional)
           axios
-            .get(`http://localhost:5000/bookings?email=${user?.email}`)
+            .get(`https://server-mu-ten-68.vercel.app/bookings?email=${user?.email}`)
             .then((res) => setBookings(res.data));
         }
       })

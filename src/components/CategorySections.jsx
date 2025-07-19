@@ -17,7 +17,7 @@ const CategorySections = () => {
   const [filteredTutorials, setFilteredTutorials] = useState([]);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/tutorials/${category}`).then((res) => {
+    axios.get(`https://server-mu-ten-68.vercel.app/tutorials/${category}`).then((res) => {
       setAllTutorials(res.data);
       console.log(res.data)
     });

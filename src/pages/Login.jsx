@@ -40,7 +40,7 @@ const Login = () => {
         // JWT token:
         const user = { email: email };
         axios
-          .post(`http://localhost:5000/jwt`, user, {
+          .post(`https://server-mu-ten-68.vercel.app/jwt`, user, {
             withCredentials: true,
           })
           .then((res) => {

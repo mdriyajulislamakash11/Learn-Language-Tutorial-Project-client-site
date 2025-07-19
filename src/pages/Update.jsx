@@ -10,7 +10,7 @@ const Update = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/tutorial/${id}`)
+      .get(`https://server-mu-ten-68.vercel.app/tutorial/${id}`)
       .then((res) => setTutorial(res.data))
       .catch((err) => console.error(err));
   }, [id]);
@@ -29,7 +29,7 @@ const Update = () => {
     };
 
     axios
-      .put(`http://localhost:5000/tutorial/${id}`, updatedTutorial)
+      .put(`https://server-mu-ten-68.vercel.app/tutorial/${id}`, updatedTutorial)
       .then((res) => {
         if (res.data.modifiedCount > 0) {
           Swal.fire("Success!", "Tutorial updated successfully!", "success");

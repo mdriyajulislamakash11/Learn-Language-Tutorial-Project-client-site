@@ -11,7 +11,7 @@ const MyTutorials = () => {
   useEffect(() => {
     if (user?.email) {
       axios
-        .get(`http://localhost:5000/tutorials?email=${user?.email}`)
+        .get(`https://server-mu-ten-68.vercel.app/tutorials?email=${user?.email}`)
         .then((res) => setTutorials(res.data))
         .catch((err) => console.error(err));
     }
@@ -29,7 +29,7 @@ const MyTutorials = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        axios.delete(`http://localhost:5000/tutorial/${id}`).then((res) => {
+        axios.delete(`https://server-mu-ten-68.vercel.app/tutorial/${id}`).then((res) => {
           if (res.data.deletedCount) {
             const remaining = tutorials.filter(
               (tutorial) => tutorial._id !== id

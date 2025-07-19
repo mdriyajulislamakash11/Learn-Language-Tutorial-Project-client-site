@@ -4,7 +4,7 @@ import { AuthContext } from "../Auth/AuthProvaide";
 import { useNavigate } from "react-router-dom";
 
 const axiosInstence = axios.create({
-  baseURL: `http://localhost:5000`,
+  baseURL: `https://server-mu-ten-68.vercel.app`,
   withCredentials: true,
 });
 
@@ -33,7 +33,7 @@ const useAxiosSecure = () => {
       }
     );
   }, []);
-  
+
   return axiosInstence
 };
 

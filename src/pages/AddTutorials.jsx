@@ -32,7 +32,7 @@ const AddTutorials = () => {
     console.log(tutorial);
 
     // post mathods:
-    axios.post(`http://localhost:5000/add-tutorials`, tutorial).then((res) => {
+    axios.post(`https://server-mu-ten-68.vercel.app/add-tutorials`, tutorial).then((res) => {
       console.log(res.data);
 
       Swal.fire({
