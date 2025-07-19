@@ -2,17 +2,16 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../Auth/AuthProvaide";
 import axios from "axios";
 import Swal from "sweetalert2";
+import useAxiosSecure from "../hooks/useAxiosSecure";
 
 const MyBookedTutors = () => {
   const { user } = useContext(AuthContext);
   const [bookings, setBookings] = useState([]);
-  console.log(bookings);
+  const axiosSecure = useAxiosSecure();
 
   useEffect(() => {
-    axios
-      .get(`http://localhost:5000/bookings?email=${user?.email}`, {
-        withCredentials: true,
-      }) // http://localhost:5000/bookings?email=rjakashchowdury@gmail.com
+    axiosSecure
+      .get(`http://localhost:5000/bookings?email=${user?.email}`) // http://localhost:5000/bookings?email=rjakashchowdury@gmail.com
       .then((res) => setBookings(res.data))
       .catch((err) => console.error(err));
   }, [user?.email]);
