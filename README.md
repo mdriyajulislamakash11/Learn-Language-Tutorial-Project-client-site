@@ -1,12 +1,54 @@
-# React + Vite
+# 🎓 Eazy Learn - Online Learning Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+**Eazy Learn** হল একটি অনলাইন টিউটর ও টিউটোরিয়াল প্ল্যাটফর্ম যেখানে শিক্ষার্থীরা সহজে টিউটর খুঁজে পেতে পারে এবং টিউটোরিয়াল তৈরি করে অন্যদের সাথে শেয়ার করতে পারে।
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Live Site
 
-## Expanding the ESLint configuration
+🔗 Frontend: [https://chipper-taffy-4da6de.netlify.app](https://chipper-taffy-4da6de.netlify.app)  
+🌐 Backend: [https://server-mu-ten-68.vercel.app](https://server-mu-ten-68.vercel.app)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🔐 Features
+
+- ✅ Email/Password Authentication
+- 🔐 JWT Authentication with Axios Interceptor
+- 🔍 Find Tutors by Category
+- ✍️ Add and View Tutorials
+- ⭐ Users can leave Reviews
+- 🛡️ Private Route Protection
+- 🧑 Admin and Instructor Role Management
+- ☁️ Hosted with Netlify & Vercel
+
+---
+
+## 🛠️ Technologies Used
+
+### Frontend:
+- React
+- React Router DOM
+- Tailwind CSS
+- DaisyUI
+- Axios
+- SweetAlert2
+
+### Backend:
+- Node.js
+- Express.js
+- MongoDB
+- JWT (JSON Web Token)
+- CORS, dotenv, cookie-parser
+
+---
+
+## 🔧 Setup Instructions
+
+### For Frontend:
+
+```bash
+git clone https://github.com/yourusername/eazy-learn-client.git
+cd eazy-learn-client
+npm install
+npm run dev
